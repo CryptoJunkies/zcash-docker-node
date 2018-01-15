@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # We have to fetch params and if we don't create a conf file the binary barfs.
 RUN zcash-fetch-params \
- && RUN mkdir ~/.zcash \
+ && mkdir ~/.zcash \
  && touch ~/.zcash/zcash.conf
 
 VOLUME ~/.zcash
