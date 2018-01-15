@@ -12,8 +12,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-transport-https \
     ca-certificates \
     libcurl3 \
- && rm -rf /var/lib/apt/lists/* \
  && wget --no-check-certificate $ZEC_URL \
+ && apt-get remove \
+    wget \
+    apt-transport-https \
+    ca-certificates \
+ && apt-get autoremove \
+ && rm -rf /var/lib/apt/lists/* \
  && tar -xvf ./*.tar.gz -C /usr/local --strip-components 1 \
  && rm -rf ./*.tar.gz
 
