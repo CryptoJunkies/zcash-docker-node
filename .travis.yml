@@ -8,8 +8,8 @@ services:
   - docker
 
 script:
-  - DOCKER_REPO=$DOCKER_USER
-  - TAG="deb-1.0.13"
+  - DOCKER_REPO="cryptojunkies"
+  - TAG="deb-1.0.14"
   - CONT_NAME="zcash-node"
   - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
   - docker build -t $DOCKER_REPO/$CONT_NAME:latest .
