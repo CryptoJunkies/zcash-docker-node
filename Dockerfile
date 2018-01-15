@@ -13,11 +13,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     libcurl3 \
  && wget --no-check-certificate $ZEC_URL \
- && apt-get remove \
+ && apt-get remove -y \
     wget \
     apt-transport-https \
     ca-certificates \
- && apt-get autoremove \
+ && apt-get autoremove -y \
  && rm -rf /var/lib/apt/lists/* \
  && tar -xvf ./*.tar.gz -C /usr/local --strip-components 1 \
  && rm -rf ./*.tar.gz
@@ -32,4 +32,4 @@ VOLUME ~/.zcash
 EXPOSE 8232/tcp
 
 ENTRYPOINT [ "zcashd" ]
-CMD [ "-server", "-printtoconsole", "-addnode=mainnet.z.cash", "-rpcuser=${RPC_USER}", "-rpcport=${RPC_PORT}" ]
+CMD [ "-server -printtoconsole -addnode=mainnet.z.cash -rpcuser=${RPC_USER} -rpcport=${RPC_PORT}" ]
