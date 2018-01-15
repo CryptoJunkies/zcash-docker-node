@@ -1,7 +1,7 @@
-# nv-claymore [![Build Status](https://travis-ci.org/CultClassik/zcash-docker-node.svg?branch=master)](https://travis-ci.org/CultClassik/zcash-docker-node)
-[Image on Docker Hub](https://hub.docker.com/r/cultclassik/zcash-node/)
+# zcash-docker-node [![Build Status](https://travis-ci.org/CryptoJunkies/zcash-docker-node.svg?branch=master)](https://travis-ci.org/CryptoJunkies/zcash-docker-node)
+[Image on Docker Hub](https://hub.docker.com/r/cryptojunkies/zcash-node/)
 
-Dockerfile to build cultclassik/zcash-node container.
+Dockerfile to build cryptojunkies/zcash-node container.
 
 Uses the official binaries from Zcash.
 
@@ -13,7 +13,7 @@ Requires a working installation of Docker CE or EE.
 
 ## Installation
 
-docker build -t cultclassik/zcash-node .
+docker build -t cryptojunkies/zcash-node .
 
 ## Usage
 
