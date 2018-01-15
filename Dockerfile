@@ -27,4 +27,4 @@ VOLUME ~/.zcash
 EXPOSE 8232/tcp
 
 ENTRYPOINT [ "zcashd" ]
-CMD [ "-addnode", "mainnet.z.cash", "-rpcuser", "${RPC_USER}", "-rpcport", "${RPC_PORT}" ]
+CMD [ "-server", "-printtoconsole", "-addnode=mainnet.z.cash", "-rpcuser=${RPC_USER}", "-rpcport=${RPC_PORT}" ]
