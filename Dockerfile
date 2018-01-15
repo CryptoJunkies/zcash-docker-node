@@ -17,7 +17,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && tar -xvf ./*.tar.gz -C /usr/local --strip-components 1 \
  && rm -rf ./*.tar.gz
 
-RUN zcash-fetch-params
+# We have to fetch params and if we don't create a conf file the binary barfs.
+RUN zcash-fetch-params \
+ && RUN mkdir ~/.zcash \
+ && touch ~/.zcash/zcash.conf
 
 VOLUME ~/.zcash
 
